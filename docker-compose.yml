@@ -1,0 +1,14 @@
+# services:
+#   portfolio:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     container_name: portfolio-app
+#     restart: always
+#     ports:
+#       - "3000:3000"
+#     environment:
+#       - NODE_ENV=production
+#       - PORT=3000
+#       - ADMIN_PIN=8888
+# #

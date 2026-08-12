@@ -1,0 +1,174 @@
+{
+  "cvUrl": "/MyCV.pdf",
+  "hero": {
+    "ready": {
+      "vi": "Sẵn sàng cho dự án mới",
+      "en": "Ready for new projects"
+    },
+    "greeting": {
+      "vi": "Xin chào, tôi là",
+      "en": "Hello, I'm"
+    },
+    "name": {
+      "vi": "Nguyễn Đức Toàn",
+      "en": "Nguyen Duc Toan"
+    },
+    "role": {
+      "vi": "Lập trình viên Front-End",
+      "en": "Front End Developer"
+    },
+    "description": {
+      "vi": "Kỹ sư phát triển phần mềm Front-End với kinh nghiệm thực tế về TypeScript, React và Next.js. Chuyên môn hóa về Server-Side Rendering (SSR), tối ưu hóa SEO và các chiến lược caching hiện đại để mang lại sản phẩm web chất lượng cao.",
+      "en": "Front End Developer with hands-on experience in TypeScript, React, and Next.js, specializing in server-side rendering (SSR), SEO optimization, and modern caching strategies to build high-performance web applications."
+    },
+    "statsYears": "3+",
+    "statsProjects": "20+",
+    "statsClients": "10+"
+  },
+  "about": {
+    "title": {
+      "vi": "Về Bản Thân",
+      "en": "About Me"
+    },
+    "subtitle": {
+      "vi": "Đam mê sáng tạo những giải pháp công nghệ hiệu quả, tối ưu hiệu năng và nâng cao trải nghiệm người dùng.",
+      "en": "Passionate about creating efficient, high-performance, and user-centric technology solutions."
+    },
+    "narrativeTitle": {
+      "vi": "Hành trình & Mục tiêu nghề nghiệp",
+      "en": "Journey & Career Goals"
+    },
+    "narrativeP1": {
+      "vi": "Tôi tốt nghiệp chuyên ngành Công nghệ thông tin tại Đại học Thăng Long. Với kinh nghiệm làm việc thực tế tại APUS Digital Solutions JSC và VNPT Cybersecurity Center, tôi tập trung phát triển các ứng dụng web chất lượng cao, dễ bảo trì và mở rộng tốt.",
+      "en": "I graduated with a major in Information Technology from Thang Long University. With hands-on experience working at APUS Digital Solutions JSC and VNPT Cybersecurity Center, I focus on building high-quality, maintainable, and scalable web applications."
+    },
+    "narrativeP2": {
+      "vi": "Mục tiêu của tôi là xây dựng phần mềm sạch sẽ (Clean Code), áp dụng các mô hình kết xuất hiện đại (SSR/SSG/ISR) kết hợp với các giải pháp quản lý bộ nhớ đệm (React Query/Redis) nhằm mang lại hiệu quả tối đa cho người dùng và doanh nghiệp.",
+      "en": "My objective is to write clean, scalable software, applying modern rendering paradigms (SSR/SSG/ISR) and efficient caching layers (React Query/Redis) to deliver maximum value to end-users and organizations."
+    }
+  },
+  "skills": {
+    "frontend": [
+      "Next.js (SSR/SSG)",
+      "React 19",
+      "TypeScript",
+      "TailwindCSS v4",
+      "Vite",
+      "HTML5/CSS3",
+      "Zustand / Redux",
+      "ES6+"
+    ],
+    "backend": [
+      "Node.js",
+      "Express.js",
+      "NestJS",
+      "Spring Boot",
+      "RESTful APIs",
+      "GraphQL",
+      "JWT Auth",
+      "Websockets"
+    ],
+    "devops": [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Redis Cache",
+      "Docker",
+      "Git / GitHub",
+      "CI/CD (GitHub Actions)",
+      "Vercel"
+    ]
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": {
+        "vi": "Hệ thống ERP Doanh nghiệp",
+        "en": "Enterprise ERP System"
+      },
+      "category": "Fullstack",
+      "description": {
+        "vi": "Phát triển các module HRM, quản lý đơn hàng, nhân sự và sản phẩm với Next.js, TypeScript, MUI và React Hook Form. Tích hợp API RESTful và TanStack Query để đồng bộ dữ liệu thời gian thực.",
+        "en": "Developed HRM, order, and product management modules using Next.js, TypeScript, MUI, and React Hook Form. Integrated RESTful APIs and TanStack Query for real-time synchronization."
+      },
+      "tags": [
+        "Next.js",
+        "TypeScript",
+        "MUI",
+        "TanStack Query",
+        "TailwindCSS"
+      ],
+      "image": "https://images.unsplash.com/photo-1557821552-17105176677c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "demoUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 2,
+      "title": {
+        "vi": "Nền tảng Thương mại Điện tử",
+        "en": "E-Commerce Platform"
+      },
+      "category": "Frontend",
+      "description": {
+        "vi": "Nền tảng mua sắm với giỏ hàng thời gian thực, tích hợp cổng thanh toán Stripe và trang quản lý bán hàng (Dashboard) chi tiết cho admin.",
+        "en": "An online shopping platform with a real-time shopping cart, Stripe integration, and a comprehensive admin control dashboard."
+      },
+      "tags": [
+        "React",
+        "TypeScript",
+        "Stripe",
+        "Zustand",
+        "TailwindCSS"
+      ],
+      "image": "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "demoUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 3,
+      "title": {
+        "vi": "Hệ thống API Quản lý Tuyển dụng & Blog",
+        "en": "Recruitment & Blog API System"
+      },
+      "category": "Backend",
+      "description": {
+        "vi": "Xây dựng backend xử lý dữ liệu tin tuyển dụng và bài viết sử dụng ExpressJS. Tích hợp bộ nhớ đệm Redis để tối ưu hóa hiệu suất API.",
+        "en": "Built backend API services for managing recruitment postings and blogs using ExpressJS. Integrated Redis caching layer for API performance optimization."
+      },
+      "tags": [
+        "Express",
+        "TypeScript",
+        "Redis",
+        "PostgreSQL"
+      ],
+      "image": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "demoUrl": "#",
+      "githubUrl": "#"
+    },
+    {
+      "id": 4,
+      "title": {
+        "vi": "Ứng dụng Quản lý Công việc Kanban",
+        "en": "Kanban Task Management App"
+      },
+      "category": "Frontend",
+      "description": {
+        "vi": "Bảng quản lý công việc trực quan hỗ trợ kéo thả thẻ công việc, thống kê hiệu suất làm việc của nhóm bằng biểu đồ trực quan.",
+        "en": "An intuitive Kanban workspace with drag-and-drop task items and visualization graphs tracking team productivity."
+      },
+      "tags": [
+        "React Native",
+        "ChartJS",
+        "TailwindCSS"
+      ],
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
+      "demoUrl": "#",
+      "githubUrl": "#"
+    }
+  ],
+  "contact": {
+    "email": "nguyenductoan538@gmail.com",
+    "github": "https://github.com/Toan1010",
+    "linkedin": "https://www.linkedin.com/in/đức-toàn-nguyễn-412219294/"
+  }
+}
