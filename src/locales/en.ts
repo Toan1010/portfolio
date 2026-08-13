@@ -105,15 +105,27 @@ export const en = {
     langVi: "🇻🇳 Vietnamese (VI)",
     langEn: "🇬🇧 English (EN)",
     cv: {
-      title: "CV File Management",
+      title: "CV File Management (3 Roles)",
+      selectRole: "Select Role CV:",
+      roleFrontend: "Front-End",
+      roleBackend: "Back-End",
+      roleFullstack: "Fullstack",
       currentCv: "Current CV File:",
       viewCv: "View / Download CV",
       selectFile: "Select new CV file (PDF or Word):",
-      uploadBtn: "Replace CV",
-      uploading: "Replacing CV...",
-      success: "CV file replaced successfully!",
+      uploadBtn: "Update CV",
+      uploading: "Uploading CV...",
+      success: "CV file updated successfully!",
       invalidType: "Only PDF (.pdf) and Word (.doc, .docx) files are accepted.",
-      noFile: "Please select a CV file (PDF or Word) to replace."
+      noFile: "Please select a CV file (PDF or Word) to upload."
+    },
+    cvModal: {
+      title: "Download CV by Role",
+      subtitle: "Choose the CV version tailored for your job role:",
+      frontendCv: "Front-End Developer CV",
+      backendCv: "Back-End Developer CV",
+      fullstackCv: "Fullstack Developer CV",
+      download: "Download"
     },
     tabs: {
       hero: "Hero Section",

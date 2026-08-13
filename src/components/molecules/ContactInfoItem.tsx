@@ -22,18 +22,18 @@ export default function ContactInfoItem({
       href={href}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className={`p-4 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 hover:border-indigo-500/40 hover:scale-[1.01] transition-all duration-300 flex items-center gap-4 group ${
+      className={`p-4 rounded-2xl bg-theme-card border border-theme hover:scale-[1.01] transition-all duration-300 flex items-center gap-4 group ${
         isSmall ? 'flex-1' : 'w-full'
       }`}
     >
-      <div className="p-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 group-hover:bg-indigo-500 group-hover:text-white transition-colors">
+      <div className="p-3 rounded-xl bg-theme-accent group-hover:opacity-90 transition-opacity">
         {icon}
       </div>
-      <div className="flex flex-col text-left overflow-hidden">
-        <span className="text-xs font-semibold text-slate-400 uppercase tracking-wider">
+      <div className="flex flex-col text-left overflow-hidden text-theme-main">
+        <span className="text-xs font-bold opacity-75 uppercase tracking-wider">
           {title}
         </span>
-        <span className="text-sm font-bold text-slate-800 dark:text-slate-200 truncate">
+        <span className="text-sm font-extrabold truncate">
           {detail}
         </span>
       </div>

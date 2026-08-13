@@ -2,6 +2,58 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ==========================================================================
+   CENTRALIZED THEME COLOR SYSTEM
+   Chỉnh sửa toàn bộ màu sắc giao diện (Light & Dark theme) duy nhất tại đây.
+   ========================================================================== */
+:root {
+  /* ==========================================================================
+     3 MÀU CHÍNH DỰ ÁN (Sửa 3 màu tại đây)
+     ========================================================================== */
+  --color-primary: #ffefb3;
+  /* Màu Primary (Màu Nền Light / Màu Chữ Dark) */
+  --color-secondary: #013e37;
+  /* Màu Secondary (Màu Chữ Light / Màu Nền Dark) */
+  --color-third: #d97706;
+  /* Màu Third / Accent / Highlighting */
+
+  /* ==========================================================================
+     LIGHT THEME (bg: primary, text: secondary)
+     ========================================================================== */
+  --theme-bg-main: var(--color-primary);
+  --theme-text-main: var(--color-secondary);
+
+  --theme-accent-bg: var(--color-secondary);
+  --theme-accent-text: var(--color-primary);
+
+  --theme-third-bg: var(--color-third);
+  --theme-third-text: #ffffff;
+
+  --theme-bg-card: color-mix(in srgb, #ffffff 75%, var(--color-primary));
+  --theme-bg-card-subtle: color-mix(in srgb, var(--color-secondary) 7%, transparent);
+  --theme-border: color-mix(in srgb, var(--color-secondary) 18%, transparent);
+  --theme-header-bg: color-mix(in srgb, var(--color-primary) 85%, transparent);
+}
+
+.dark {
+  /* ==========================================================================
+     DARK THEME (Ngược lại: bg: secondary, text: primary)
+     ========================================================================== */
+  --theme-bg-main: var(--color-secondary);
+  --theme-text-main: var(--color-primary);
+
+  --theme-accent-bg: var(--color-primary);
+  --theme-accent-text: var(--color-secondary);
+
+  --theme-third-bg: var(--color-third);
+  --theme-third-text: #ffffff;
+
+  --theme-bg-card: color-mix(in srgb, var(--color-primary) 12%, var(--color-secondary));
+  --theme-bg-card-subtle: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  --theme-border: color-mix(in srgb, var(--color-primary) 22%, transparent);
+  --theme-header-bg: color-mix(in srgb, var(--color-secondary) 85%, transparent);
+}
+
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -11,6 +63,7 @@
       opacity: 0;
       transform: translateY(24px) scale(0.98);
     }
+
     to {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -24,6 +77,55 @@ html {
 
 body {
   font-family: var(--font-sans);
+  background-color: var(--theme-bg-main);
+  color: var(--theme-text-main);
   transition-property: color, background-color, border-color;
   transition-duration: 300ms;
+}
+
+/* Centralized Theme Utility Classes */
+.bg-theme-main {
+  background-color: var(--theme-bg-main);
+}
+
+.text-theme-main {
+  color: var(--theme-text-main);
+}
+
+.bg-theme-card {
+  background-color: var(--theme-bg-card);
+}
+
+.bg-theme-card-subtle {
+  background-color: var(--theme-bg-card-subtle);
+}
+
+.border-theme {
+  border-color: var(--theme-border);
+}
+
+.bg-theme-accent {
+  background-color: var(--theme-accent-bg);
+  color: var(--theme-accent-text);
+}
+
+.text-theme-accent {
+  color: var(--theme-accent-bg);
+}
+
+.bg-theme-third {
+  background-color: var(--theme-third-bg);
+  color: var(--theme-third-text);
+}
+
+.text-theme-third {
+  color: var(--color-third);
+}
+
+.border-theme-third {
+  border-color: var(--color-third);
+}
+
+.bg-theme-header {
+  background-color: var(--theme-header-bg);
 }

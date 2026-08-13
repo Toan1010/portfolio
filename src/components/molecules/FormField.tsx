@@ -25,8 +25,8 @@ export default function FormField({
 }: FormFieldProps) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={id} className="text-sm font-semibold text-slate-700 dark:text-slate-300">
-        {label} {required && <span className="text-pink-500">*</span>}
+      <label htmlFor={id} className="text-sm font-bold text-theme-main">
+        {label} {required && <span className="text-red-500">*</span>}
       </label>
 
       {rows ? (
@@ -37,7 +37,7 @@ export default function FormField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition-colors resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-theme-card border border-theme text-theme-main placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none font-medium"
         />
       ) : (
         <input
@@ -47,7 +47,7 @@ export default function FormField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:border-indigo-500 transition-colors"
+          className="w-full px-4 py-3 rounded-xl bg-theme-card border border-theme text-theme-main placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-medium"
         />
       )}
     </div>

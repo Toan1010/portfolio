@@ -31,13 +31,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-slate-50 dark:bg-[#0b0f19] text-slate-800 dark:text-slate-100 min-h-screen relative font-sans selection:bg-indigo-500/30 selection:text-indigo-200 antialiased overflow-x-hidden transition-colors duration-300">
+      <body className="bg-theme-main text-theme-main min-h-screen relative font-sans selection:bg-theme-card-subtle antialiased overflow-x-hidden transition-colors duration-300">
         <ThemeProvider>
           <LanguageProvider>
             {/* Background Decorative Glows */}
-            <div className="absolute top-[-10%] left-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-indigo-600/5 dark:bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none" />
-            <div className="absolute bottom-[20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-violet-600/5 dark:bg-violet-600/10 rounded-full blur-[140px] pointer-events-none" />
-            <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] max-w-[700px] bg-blue-600/3 dark:bg-blue-600/5 rounded-full blur-[160px] pointer-events-none" />
+            <div className="absolute top-[-10%] left-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-[20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] max-w-[700px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
 
             <Header />
 

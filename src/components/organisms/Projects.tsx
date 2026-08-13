@@ -64,22 +64,22 @@ export default function Projects({ data }: ProjectsProps) {
     : projectsData.filter(p => p.category === activeTab)
 
   return (
-    <section id="projects" className="py-24 px-6 border-t border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-[#070b12]/50 relative overflow-hidden">
+    <section id="projects" className="py-24 px-6 border-t border-theme bg-theme-card-subtle relative overflow-hidden">
       {/* Background radial glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-indigo-500/5 dark:bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-violet-500/5 dark:bg-violet-500/10 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-amber-500/10 rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-extrabold bg-theme-card-subtle text-theme-main border border-theme">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>{t('header.projects')}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-main">
             {t('projects.title')}
           </h2>
-          <div className="h-1.5 w-16 bg-gradient-to-r from-indigo-500 to-violet-500 mx-auto rounded-full" />
-          <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed">
+          <div className="h-1.5 w-16 bg-theme-accent mx-auto rounded-full" />
+          <p className="opacity-80 text-theme-main max-w-xl mx-auto leading-relaxed">
             {t('projects.subtitle')}
           </p>
         </div>
@@ -90,10 +90,10 @@ export default function Projects({ data }: ProjectsProps) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-semibold border transition-all duration-300 cursor-pointer ${
+              className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
                 activeTab === tab
-                  ? 'bg-gradient-to-tr from-indigo-500 to-violet-500 text-white border-transparent shadow-lg shadow-indigo-500/25 scale-[1.02]'
-                  : 'bg-white dark:bg-white/5 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800/80 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10'
+                  ? 'bg-theme-accent shadow-md scale-[1.02]'
+                  : 'bg-theme-card text-theme-main border border-theme hover:opacity-80'
               }`}
             >
               {tab === 'All' 

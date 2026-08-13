@@ -18,45 +18,45 @@ export default function About({ data }: AboutProps) {
   const narrativeP2 = getBilingualText(data?.narrativeP2, language) || t('about.narrativeP2')
 
   return (
-    <section id="about" className="py-24 px-6 border-t border-slate-200 dark:border-slate-900 bg-slate-100/50 dark:bg-[#090d16]/50">
+    <section id="about" className="py-24 px-6 border-t border-theme bg-theme-card-subtle">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">{title}</h2>
-          <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full" />
-          <p className="text-slate-600 dark:text-slate-400">{subtitle}</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-main">{title}</h2>
+          <div className="h-1 w-20 bg-theme-accent mx-auto rounded-full" />
+          <p className="opacity-80 text-theme-main">{subtitle}</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column: Narrative */}
           <div className="space-y-6 text-left">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <Award className="text-indigo-600 dark:text-indigo-400" /> {narrativeTitle}
+            <h3 className="text-2xl font-bold text-theme-main flex items-center gap-2">
+              <Award className="text-emerald-500" /> {narrativeTitle}
             </h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="opacity-85 leading-relaxed text-theme-main">
               {narrativeP1}
             </p>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p className="opacity-85 leading-relaxed text-theme-main">
               {narrativeP2}
             </p>
 
             {/* Core Values */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
               <div className="flex gap-3 items-start">
-                <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 mt-1">
+                <div className="p-2 rounded-lg bg-theme-card-subtle text-theme-main mt-1">
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">{t('about.valueQualityTitle')}</h4>
-                  <p className="text-xs text-slate-500 mt-0.5">{t('about.valueQualityDesc')}</p>
+                  <h4 className="font-bold text-theme-main">{t('about.valueQualityTitle')}</h4>
+                  <p className="text-xs opacity-75 text-theme-main mt-0.5">{t('about.valueQualityDesc')}</p>
                 </div>
               </div>
               <div className="flex gap-3 items-start">
-                <div className="p-2 rounded-lg bg-violet-500/10 text-violet-600 dark:text-violet-400 mt-1">
+                <div className="p-2 rounded-lg bg-theme-card-subtle text-theme-main mt-1">
                   <CheckCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-slate-900 dark:text-white">{t('about.valuePerformanceTitle')}</h4>
-                  <p className="text-xs text-slate-500 mt-0.5">{t('about.valuePerformanceDesc')}</p>
+                  <h4 className="font-bold text-theme-main">{t('about.valuePerformanceTitle')}</h4>
+                  <p className="text-xs opacity-75 text-theme-main mt-0.5">{t('about.valuePerformanceDesc')}</p>
                 </div>
               </div>
             </div>
@@ -64,36 +64,36 @@ export default function About({ data }: AboutProps) {
 
           {/* Right Column: Visual highlights */}
           <div className="grid grid-cols-2 gap-6">
-            <div className="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 transition-colors text-left space-y-2">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-indigo-500 to-indigo-600 flex items-center justify-center text-white">
+            <div className="p-6 rounded-2xl bg-theme-card border border-theme hover:scale-[1.02] transition-transform text-left space-y-2">
+              <div className="w-12 h-12 rounded-xl bg-theme-accent flex items-center justify-center font-bold">
                 <Code className="w-6 h-6" />
               </div>
-              <h4 className="font-bold text-lg text-slate-900 dark:text-white">{t('about.highlightFrontendTitle')}</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{t('about.highlightFrontendDesc')}</p>
+              <h4 className="font-bold text-lg text-theme-main">{t('about.highlightFrontendTitle')}</h4>
+              <p className="text-sm opacity-80 text-theme-main">{t('about.highlightFrontendDesc')}</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 transition-colors text-left space-y-2">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-violet-500 to-violet-600 flex items-center justify-center text-white">
+            <div className="p-6 rounded-2xl bg-theme-card border border-theme hover:scale-[1.02] transition-transform text-left space-y-2">
+              <div className="w-12 h-12 rounded-xl bg-theme-accent flex items-center justify-center font-bold">
                 <Server className="w-6 h-6" />
               </div>
-              <h4 className="font-bold text-lg text-slate-900 dark:text-white">{t('about.highlightBackendTitle')}</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{t('about.highlightBackendDesc')}</p>
+              <h4 className="font-bold text-lg text-theme-main">{t('about.highlightBackendTitle')}</h4>
+              <p className="text-sm opacity-80 text-theme-main">{t('about.highlightBackendDesc')}</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 transition-colors text-left space-y-2">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-blue-500 to-blue-600 flex items-center justify-center text-white">
+            <div className="p-6 rounded-2xl bg-theme-card border border-theme hover:scale-[1.02] transition-transform text-left space-y-2">
+              <div className="w-12 h-12 rounded-xl bg-theme-accent flex items-center justify-center font-bold">
                 <Database className="w-6 h-6" />
               </div>
-              <h4 className="font-bold text-lg text-slate-900 dark:text-white">{t('about.highlightDatabaseTitle')}</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{t('about.highlightDatabaseDesc')}</p>
+              <h4 className="font-bold text-lg text-theme-main">{t('about.highlightDatabaseTitle')}</h4>
+              <p className="text-sm opacity-80 text-theme-main">{t('about.highlightDatabaseDesc')}</p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 hover:border-slate-300 dark:hover:border-slate-700 transition-colors text-left space-y-2">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-pink-500 to-pink-600 flex items-center justify-center text-white">
+            <div className="p-6 rounded-2xl bg-theme-card border border-theme hover:scale-[1.02] transition-transform text-left space-y-2">
+              <div className="w-12 h-12 rounded-xl bg-theme-accent flex items-center justify-center font-bold">
                 <Cpu className="w-6 h-6" />
               </div>
-              <h4 className="font-bold text-lg text-slate-900 dark:text-white">{t('about.highlightSystemTitle')}</h4>
-              <p className="text-sm text-slate-600 dark:text-slate-400">{t('about.highlightSystemDesc')}</p>
+              <h4 className="font-bold text-lg text-theme-main">{t('about.highlightSystemTitle')}</h4>
+              <p className="text-sm opacity-80 text-theme-main">{t('about.highlightSystemDesc')}</p>
             </div>
           </div>
         </div>

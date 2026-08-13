@@ -6,10 +6,10 @@ interface StatItemProps {
 export default function StatItem({ value, label }: StatItemProps) {
   return (
     <div className="flex flex-col text-left">
-      <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-indigo-500 to-violet-500 bg-clip-text text-transparent">
+      <span className="text-2xl sm:text-3xl font-black text-theme-main">
         {value}
       </span>
-      <span className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1">
+      <span className="text-xs font-bold opacity-80 text-theme-main mt-1">
         {label}
       </span>
     </div>

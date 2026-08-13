@@ -35,16 +35,16 @@ export default function Contact({ data }: ContactProps) {
     <section id="contact" className="py-24 px-6 relative">
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">{t('contact.title')}</h2>
-          <div className="h-1 w-20 bg-indigo-500 mx-auto rounded-full" />
-          <p className="text-slate-600 dark:text-slate-400">{t('contact.subtitle')}</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-main">{t('contact.title')}</h2>
+          <div className="h-1 w-20 bg-theme-accent mx-auto rounded-full" />
+          <p className="opacity-80 text-theme-main">{t('contact.subtitle')}</p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left details */}
           <div className="lg:col-span-5 space-y-8 text-left">
-            <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{t('contact.infoTitle')}</h3>
-            <p className="text-slate-600 dark:text-slate-400">
+            <h3 className="text-2xl font-bold text-theme-main">{t('contact.infoTitle')}</h3>
+            <p className="opacity-80 text-theme-main">
               {t('contact.infoDesc')}
             </p>
 
@@ -77,7 +77,7 @@ export default function Contact({ data }: ContactProps) {
 
           {/* Right form */}
           <div className="lg:col-span-7">
-            <div className="p-8 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 backdrop-blur-md relative overflow-hidden shadow-lg dark:shadow-none">
+            <div className="p-8 rounded-2xl bg-theme-card border border-theme backdrop-blur-md relative overflow-hidden shadow-lg">
               <form onSubmit={handleContactSubmit} className="space-y-6 text-left">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <FormField
@@ -111,7 +111,7 @@ export default function Contact({ data }: ContactProps) {
 
                 <button 
                   type="submit" 
-                  className="w-full py-4 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 text-white font-bold hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.01] transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full py-4 rounded-xl bg-theme-accent font-bold hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer shadow-md"
                 >
                   {t('contact.submit')} <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform duration-300" />
                 </button>
@@ -119,12 +119,12 @@ export default function Contact({ data }: ContactProps) {
 
               {/* Success alert message overlay */}
               {formSubmitted && (
-                <div className="absolute inset-0 bg-white/95 dark:bg-[#0b0f19]/95 flex flex-col items-center justify-center p-6 text-center animate-fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                <div className="absolute inset-0 bg-theme-main flex flex-col items-center justify-center p-6 text-center animate-fade-in text-theme-main">
+                  <div className="w-16 h-16 rounded-full bg-theme-card-subtle text-theme-main flex items-center justify-center mb-4">
                     <CheckCircle className="w-10 h-10" />
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t('contact.successTitle')}</h4>
-                  <p className="text-slate-600 dark:text-slate-400 text-sm max-w-sm">
+                  <h4 className="text-xl font-bold mb-2">{t('contact.successTitle')}</h4>
+                  <p className="opacity-80 text-sm max-w-sm">
                     {t('contact.successDesc')}
                   </p>
                 </div>

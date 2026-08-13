@@ -1,5 +1,10 @@
 {
-  "cvUrl": "/MyCV.pdf",
+  "cvUrl": "/MyCV_frontend.pdf",
+  "cvUrls": {
+    "frontend": "/MyCV_frontend.pdf",
+    "backend": "/MyCV_backend.pdf",
+    "fullstack": "/MyCV_fullstack.pdf"
+  },
   "hero": {
     "ready": {
       "vi": "Sẵn sàng cho dự án mới",

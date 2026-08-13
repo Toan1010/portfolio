@@ -1,5 +1,6 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import { useTheme } from '@/context/ThemeContext'
 import { Sun, Moon } from 'lucide-react'
 
@@ -9,17 +10,40 @@ interface ThemeToggleProps {
 
 export default function ThemeToggle({ className = "p-2 rounded-xl" }: ThemeToggleProps) {
   const { theme, toggleTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  const handleToggle = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    toggleTheme()
+  }
+
+  if (!mounted) {
+    return (
+      <button
+        type="button"
+        className={`${className} bg-theme-card-subtle border border-theme text-theme-main opacity-70 flex items-center justify-center`}
+      >
+        <Moon className="w-4 h-4 text-theme-main" />
+      </button>
+    )
+  }
 
   return (
     <button
-      onClick={toggleTheme}
+      type="button"
+      onClick={handleToggle}
       aria-label="Toggle theme"
-      className={`${className} bg-slate-100 hover:bg-slate-200 dark:bg-white/5 dark:hover:bg-white/10 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 transition-colors cursor-pointer flex items-center justify-center`}
+      className={`${className} bg-theme-card-subtle border border-theme text-theme-main hover:opacity-80 transition-opacity cursor-pointer flex items-center justify-center`}
     >
       {theme === 'dark' ? (
-        <Sun className="w-4 h-4 text-amber-400" />
+        <Sun className="w-4 h-4 text-theme-main" />
       ) : (
-        <Moon className="w-4 h-4 text-indigo-600" />
+        <Moon className="w-4 h-4 text-theme-main" />
       )}
     </button>
   )

@@ -9,6 +9,7 @@ type Language = 'vi' | 'en'
 interface LanguageContextType {
   language: Language
   setLanguage: (lang: Language) => void
+  toggleLanguage: () => void
   t: (keyPath: string, fallback?: string) => string
 }
 
@@ -31,6 +32,14 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('portfolio_lang', lang)
   }
 
+  const toggleLanguage = () => {
+    setLanguageState((prevLang) => {
+      const nextLang = prevLang === 'vi' ? 'en' : 'vi'
+      localStorage.setItem('portfolio_lang', nextLang)
+      return nextLang
+    })
+  }
+
   const t = (keyPath: string, fallback?: string): string => {
     const keys = keyPath.split('.')
     let current: any = dictionaries[language]
@@ -47,7 +56,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   )

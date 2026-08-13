@@ -26,7 +26,7 @@ export default function NavLinks({ className, onItemClick }: NavLinksProps) {
           key={link.href}
           href={link.href}
           onClick={onItemClick}
-          className="text-sm font-semibold transition-colors duration-200 text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white"
+          className="text-sm font-bold transition-opacity duration-200 text-theme-main hover:opacity-70"
         >
           {link.name}
         </Link>

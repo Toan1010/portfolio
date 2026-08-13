@@ -35,7 +35,7 @@ export async function updatePortfolioContent(pin: string, newData: any) {
   }
 }
 
-export async function uploadCV(pin: string, formData: FormData) {
+export async function uploadCV(pin: string, formData: FormData, role: 'frontend' | 'backend' | 'fullstack' = 'frontend') {
   'use server'
   if (pin !== SECRET_PIN) {
     return { success: false, error: 'Xác thực thất bại! Mã PIN không đúng.' }
@@ -64,10 +64,11 @@ export async function uploadCV(pin: string, formData: FormData) {
       fs.mkdirSync(publicDir, { recursive: true })
     }
 
-    // Xóa file CV cũ dạng MyCV.* trong thư mục public
+    // Xóa file CV cũ theo role dạng MyCV_role.* hoặc MyCV.* trong thư mục public
     const existingFiles = fs.readdirSync(publicDir)
+    const targetPrefix = `MyCV_${role}.`
     for (const f of existingFiles) {
-      if (f.startsWith('MyCV.')) {
+      if (f.toLowerCase().startsWith(targetPrefix.toLowerCase())) {
         try {
           fs.unlinkSync(path.join(publicDir, f))
         } catch (e) {
@@ -76,20 +77,32 @@ export async function uploadCV(pin: string, formData: FormData) {
       }
     }
 
-    // Lưu file CV mới
-    const newFilename = `MyCV${ext}`
+    // Lưu file CV mới cho role
+    const newFilename = `MyCV_${role}${ext}`
     const filePath = path.join(publicDir, newFilename)
     fs.writeFileSync(filePath, buffer)
 
     const cvUrl = `/${newFilename}`
 
-    // Cập nhật cvUrl vào portfolio-data.json
+    // Cập nhật cvUrls & cvUrl vào portfolio-data.json
     const currentData = await getPortfolioData()
-    currentData.cvUrl = cvUrl
+    if (!currentData.cvUrls) {
+      currentData.cvUrls = {
+        frontend: currentData.cvUrl || '/MyCV_frontend.pdf',
+        backend: '/MyCV_backend.pdf',
+        fullstack: '/MyCV_fullstack.pdf'
+      }
+    }
+
+    currentData.cvUrls[role] = cvUrl
+    if (role === 'frontend' || !currentData.cvUrl) {
+      currentData.cvUrl = cvUrl
+    }
+
     await savePortfolioData(currentData)
 
     revalidatePath('/')
-    return { success: true, cvUrl }
+    return { success: true, cvUrl, role, cvUrls: currentData.cvUrls }
   } catch (error: any) {
     return { success: false, error: error.message || 'Lỗi khi thay thế file CV.' }
   }

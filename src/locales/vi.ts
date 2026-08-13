@@ -105,15 +105,27 @@ export const vi = {
     langVi: "🇻🇳 Tiếng Việt (VI)",
     langEn: "🇬🇧 English (EN)",
     cv: {
-      title: "Quản Lý File CV",
+      title: "Quản Lý File CV (3 Role)",
+      selectRole: "Chọn Role CV:",
+      roleFrontend: "Front-End",
+      roleBackend: "Back-End",
+      roleFullstack: "Fullstack",
       currentCv: "File CV hiện tại:",
       viewCv: "Xem / Tải thử CV",
       selectFile: "Chọn file CV mới (PDF hoặc Word):",
-      uploadBtn: "Thay Đổi CV",
+      uploadBtn: "Cập Nhật CV",
       uploading: "Đang thay đổi CV...",
       success: "Thay đổi file CV thành công!",
       invalidType: "Chỉ chấp nhận file định dạng PDF (.pdf) hoặc Word (.doc, .docx).",
       noFile: "Vui lòng chọn file CV (PDF hoặc Word) cần thay thế."
+    },
+    cvModal: {
+      title: "Tải Xuống CV Theo Role",
+      subtitle: "Chọn bản CV phù hợp với vị trí tuyển dụng của bạn:",
+      frontendCv: "CV Front-End Developer",
+      backendCv: "CV Back-End Developer",
+      fullstackCv: "CV Fullstack Developer",
+      download: "Tải xuống"
     },
     tabs: {
       hero: "Hero Section",
