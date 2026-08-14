@@ -10,11 +10,11 @@
   /* ==========================================================================
      3 MÀU CHÍNH DỰ ÁN (Sửa 3 màu tại đây)
      ========================================================================== */
-  --color-primary: #ffefb3;
+  --color-primary: #fce79b;
   /* Màu Primary (Màu Nền Light / Màu Chữ Dark) */
-  --color-secondary: #013e37;
+  --color-secondary: #00221e;
   /* Màu Secondary (Màu Chữ Light / Màu Nền Dark) */
-  --color-third: #d97706;
+  --color-third: #c53913;
   /* Màu Third / Accent / Highlighting */
 
   /* ==========================================================================
