@@ -60,8 +60,8 @@ export default function PortfolioUpdate() {
   if (!data || isLoading) {
     return (
       <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3">
-        <RefreshCw className="w-8 h-8 text-indigo-500 animate-spin" />
-        <p className="text-sm font-semibold text-slate-400">{t('admin.loadingData')}</p>
+        <RefreshCw className="w-8 h-8 text-theme-main animate-spin" />
+        <p className="text-sm font-semibold text-theme-muted">{t('admin.loadingData')}</p>
       </div>
     )
   }
@@ -91,8 +91,8 @@ export default function PortfolioUpdate() {
         <div
           className={`mb-8 p-4 rounded-2xl flex items-center gap-3 text-sm font-semibold border ${
             saveStatus.type === 'success'
-              ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20'
-              : 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20'
+              ? 'bg-theme-card-subtle text-theme-main border-theme'
+              : 'bg-red-500/10 text-red-500 border-red-500/20'
           }`}
         >
           {saveStatus.type === 'success' ? <CheckCircle className="w-5 h-5 flex-shrink-0" /> : <AlertCircle className="w-5 h-5 flex-shrink-0" />}
@@ -101,14 +101,14 @@ export default function PortfolioUpdate() {
       )}
 
       {/* Content Language Switcher Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-indigo-500/10 border border-indigo-500/20 rounded-2xl p-4 mb-8">
-        <div className="flex items-center gap-2">
-          <Globe className="w-5 h-5 text-indigo-500 flex-shrink-0" />
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 bg-theme-card border border-theme rounded-2xl p-4 mb-8">
+        <div className="flex items-center gap-2.5">
+          <Globe className="w-5 h-5 text-theme-main flex-shrink-0" />
           <div>
-            <span className="text-sm font-bold text-slate-900 dark:text-white block">
+            <span className="text-sm font-bold text-theme-main block">
               {t('admin.editLangLabel')}
             </span>
-            <span className="text-xs text-slate-500 dark:text-slate-400">
+            <span className="text-xs text-theme-muted">
               {t('admin.editLangDesc')}
             </span>
           </div>
@@ -120,8 +120,8 @@ export default function PortfolioUpdate() {
             onClick={() => setEditLang('vi')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
               editLang === 'vi'
-                ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/30'
-                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-theme-accent shadow-sm'
+                : 'bg-theme-card-subtle text-theme-main border border-theme hover:bg-theme-card'
             }`}
           >
             {t('admin.langVi')}
@@ -131,8 +131,8 @@ export default function PortfolioUpdate() {
             onClick={() => setEditLang('en')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer ${
               editLang === 'en'
-                ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/30'
-                : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-theme-accent shadow-sm'
+                : 'bg-theme-card-subtle text-theme-main border border-theme hover:bg-theme-card'
             }`}
           >
             {t('admin.langEn')}
@@ -141,7 +141,7 @@ export default function PortfolioUpdate() {
       </div>
 
       {/* Tabs Bar */}
-      <div className="flex gap-2 overflow-x-auto pb-4 mb-8 border-b border-slate-200 dark:border-slate-800/60">
+      <div className="flex gap-2 overflow-x-auto pb-4 mb-8 border-b border-theme">
         {[
           { id: 'hero', label: t('admin.tabs.hero'), icon: <UserCheck className="w-4 h-4" /> },
           { id: 'about', label: t('admin.tabs.about'), icon: <Layers className="w-4 h-4" /> },
@@ -154,8 +154,8 @@ export default function PortfolioUpdate() {
             onClick={() => setActiveTab(tab.id as any)}
             className={`px-5 py-2.5 rounded-xl font-semibold text-sm flex items-center gap-2 transition-all cursor-pointer whitespace-nowrap ${
               activeTab === tab.id
-                ? 'bg-indigo-500 text-white shadow-md shadow-indigo-500/25'
-                : 'bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                ? 'bg-theme-accent shadow-sm'
+                : 'bg-theme-card border border-theme text-theme-main hover:bg-theme-card-subtle'
             }`}
           >
             {tab.icon}
@@ -165,7 +165,7 @@ export default function PortfolioUpdate() {
       </div>
 
       {/* Tab Panels */}
-      <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800/80 rounded-2xl p-8 shadow-sm text-left">
+      <div className="bg-theme-card border border-theme rounded-2xl p-8 shadow-sm text-left">
         {activeTab === 'hero' && (
           <AdminHeroTab
             data={data}

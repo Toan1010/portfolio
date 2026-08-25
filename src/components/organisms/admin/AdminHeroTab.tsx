@@ -89,17 +89,17 @@ export default function AdminHeroTab({
       </h3>
 
       {/* CV FILE MANAGEMENT CARD */}
-      <div className="p-6 rounded-2xl bg-theme-card-subtle border border-theme space-y-4">
+      <div className="p-6 rounded-2xl bg-theme-card border border-theme space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
-            <h4 className="text-base font-bold text-slate-900 dark:text-white">
+            <FileText className="w-5 h-5 text-theme-main" />
+            <h4 className="text-base font-bold text-theme-main">
               {t('admin.cv.title')}
             </h4>
           </div>
 
           {/* Role Tabs */}
-          <div className="flex items-center gap-1.5 bg-slate-200/60 dark:bg-slate-800/80 p-1 rounded-xl">
+          <div className="flex items-center gap-1.5 bg-theme-card-subtle p-1 rounded-xl border border-theme">
             {(['frontend', 'backend', 'fullstack'] as const).map((r) => (
               <button
                 key={r}
@@ -112,7 +112,7 @@ export default function AdminHeroTab({
                 className={`px-3 py-1 rounded-lg text-xs font-bold transition-all cursor-pointer ${
                   selectedCvRole === r
                     ? 'bg-theme-accent shadow-sm'
-                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                    : 'text-theme-muted hover:text-theme-main'
                 }`}
               >
                 {r === 'frontend' ? 'Front-End' : r === 'backend' ? 'Back-End' : 'Fullstack'}
@@ -122,12 +122,12 @@ export default function AdminHeroTab({
         </div>
 
         {/* Active Role CV Info */}
-        <div className="flex items-center justify-between p-3 rounded-xl bg-white/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-800/80 text-xs">
+        <div className="flex items-center justify-between p-3 rounded-xl bg-theme-card-subtle border border-theme text-xs">
           <div>
-            <span className="font-semibold text-slate-600 dark:text-slate-400">
-              {t('admin.cv.currentCv')} <strong className="text-slate-900 dark:text-white uppercase">({selectedCvRole})</strong>:
+            <span className="font-semibold text-theme-muted">
+              {t('admin.cv.currentCv')} <strong className="text-theme-main uppercase">({selectedCvRole})</strong>:
             </span>
-            <span className="ml-2 font-mono text-emerald-600 dark:text-emerald-400">
+            <span className="ml-2 font-mono text-theme-main">
               {data?.cvUrls?.[selectedCvRole] || (selectedCvRole === 'frontend' ? data?.cvUrl : `/MyCV_${selectedCvRole}.pdf`)}
             </span>
           </div>
@@ -137,7 +137,7 @@ export default function AdminHeroTab({
               target="_blank"
               rel="noopener noreferrer"
               download
-              className="px-3 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500 text-emerald-600 dark:text-emerald-400 hover:text-white font-bold transition-all flex items-center gap-1 cursor-pointer"
+              className="px-3 py-1 rounded-lg bg-theme-card border border-theme hover:bg-theme-accent font-bold transition-all flex items-center gap-1 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
               <span>{t('admin.cv.viewCv')}</span>
@@ -147,14 +147,14 @@ export default function AdminHeroTab({
 
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
           <div className="flex-1 w-full space-y-1">
-            <label className="text-xs font-semibold text-slate-600 dark:text-slate-400 block">
-              {t('admin.cv.selectFile')} <span className="font-bold text-indigo-500">[{selectedCvRole.toUpperCase()}]</span>
+            <label className="text-xs font-semibold text-theme-muted block">
+              {t('admin.cv.selectFile')} <span className="font-bold text-theme-main">[{selectedCvRole.toUpperCase()}]</span>
             </label>
             <input
               type="file"
               accept=".pdf,.doc,.docx"
               onChange={handleCvFileChange}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-emerald-500/10 file:text-emerald-600 dark:file:text-emerald-400 hover:file:bg-emerald-500/20 cursor-pointer"
+              className="w-full text-xs text-theme-muted file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border file:border-theme file:text-xs file:font-semibold file:bg-theme-card-subtle file:text-theme-main hover:file:bg-theme-card cursor-pointer"
             />
           </div>
 

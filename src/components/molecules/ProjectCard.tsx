@@ -17,28 +17,28 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const description = getBilingualText(project.description, language)
 
   return (
-    <div className="group rounded-2xl bg-theme-card border border-theme overflow-hidden hover:scale-[1.01] hover:shadow-xl transition-all duration-300 flex flex-col h-full text-left">
+    <div className="group rounded-xl bg-theme-card border border-theme overflow-hidden hover:border-theme-accent/40 hover:shadow-md transition-all duration-300 flex flex-col h-full text-left">
       {/* Project Image */}
-      <div className="relative h-48 sm:h-56 w-full overflow-hidden bg-slate-900">
+      <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-theme-card-subtle">
         <Image
           src={project.image}
           alt={title}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
-        <div className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-extrabold bg-theme-accent border border-theme">
+        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[11px] font-semibold bg-theme-accent border border-theme">
           {project.category}
         </div>
       </div>
 
       {/* Card Content */}
-      <div className="p-6 flex flex-col flex-1 justify-between space-y-4 text-theme-main">
+      <div className="p-5 flex flex-col flex-1 justify-between space-y-4 text-theme-main">
         <div className="space-y-2">
-          <h3 className="text-xl font-extrabold text-theme-main">
+          <h3 className="text-lg font-bold text-theme-main">
             {title}
           </h3>
-          <p className="text-sm opacity-85 leading-relaxed line-clamp-3">
+          <p className="text-xs sm:text-sm text-theme-muted leading-relaxed line-clamp-3">
             {description}
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tags?.map((tag: string, i: number) => (
               <span
                 key={i}
-                className="px-2.5 py-1 text-xs font-bold rounded-lg bg-theme-card-subtle text-theme-main border border-theme"
+                className="px-2 py-0.5 text-[11px] font-medium rounded-md bg-theme-card-subtle text-theme-main border border-theme"
               >
                 {tag}
               </span>
@@ -57,12 +57,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
 
           {/* Buttons */}
-          <div className="flex items-center gap-3 pt-2 border-t border-theme">
+          <div className="flex items-center gap-2.5 pt-3 border-t border-theme">
             <a
               href={project.demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-2.5 rounded-xl bg-theme-accent font-bold text-xs hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-1.5"
+              className="flex-1 py-2 rounded-lg bg-theme-accent font-semibold text-xs hover:opacity-90 transition-all flex items-center justify-center gap-1.5"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               <span>{t('projects.demo')}</span>
@@ -71,7 +71,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-theme-card-subtle text-theme-main font-bold text-xs transition-colors flex items-center justify-center gap-1.5"
+              className="px-3.5 py-2 rounded-lg bg-theme-card-subtle border border-theme text-theme-main font-semibold text-xs hover:bg-theme-card transition-colors flex items-center justify-center gap-1.5"
             >
               <Github className="w-3.5 h-3.5" />
               <span>{t('projects.source')}</span>

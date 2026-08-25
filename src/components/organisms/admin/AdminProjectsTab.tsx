@@ -26,7 +26,7 @@ export default function AdminProjectsTab({
   return (
     <div className="space-y-8">
       <div className="flex items-center justify-between">
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white">
+        <h3 className="text-xl font-bold text-theme-main">
           {t('admin.projects.title')} ({data.projects.length}) {langSuffix}
         </h3>
         <button
@@ -44,7 +44,7 @@ export default function AdminProjectsTab({
             }
             setData({ ...data, projects: [...data.projects, newProj] })
           }}
-          className="px-4 py-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 text-white font-semibold text-xs flex items-center gap-1.5 cursor-pointer"
+          className="px-4 py-2 rounded-xl bg-theme-accent font-semibold text-xs flex items-center gap-1.5 cursor-pointer shadow-sm"
         >
           <Plus className="w-4 h-4" /> {t('admin.projects.addBtn')}
         </button>
@@ -52,9 +52,9 @@ export default function AdminProjectsTab({
 
       <div className="space-y-6">
         {data.projects.map((proj: any, index: number) => (
-          <div key={proj.id} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/30 space-y-4">
+          <div key={proj.id} className="p-6 rounded-2xl border border-theme bg-theme-card-subtle space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-bold text-indigo-500">{t('admin.projects.projNum')}{index + 1}</span>
+              <span className="font-bold text-theme-main">{t('admin.projects.projNum')}{index + 1}</span>
               <button
                 type="button"
                 onClick={() => {
@@ -79,7 +79,7 @@ export default function AdminProjectsTab({
                 }}
               />
               <div className="flex flex-col gap-2">
-                <label className="text-sm font-semibold text-slate-700 dark:text-slate-300">{t('admin.projects.category')}</label>
+                <label className="text-sm font-semibold text-theme-main">{t('admin.projects.category')}</label>
                 <select
                   value={proj.category}
                   onChange={(e) => {
@@ -87,7 +87,7 @@ export default function AdminProjectsTab({
                     updated[index].category = e.target.value
                     setData({ ...data, projects: updated })
                   }}
-                  className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+                  className="w-full px-4 py-3 rounded-xl bg-theme-card-subtle border border-theme text-theme-main focus:outline-none focus:border-theme-accent text-sm"
                 >
                   <option value="Frontend">Frontend</option>
                   <option value="Backend">Backend</option>

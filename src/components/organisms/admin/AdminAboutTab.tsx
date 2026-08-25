@@ -24,7 +24,7 @@ export default function AdminAboutTab({
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">
+      <h3 className="text-xl font-bold text-theme-main mb-4">
         {t('admin.about.title')} {langSuffix}
       </h3>
       <FormField

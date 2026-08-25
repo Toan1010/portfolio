@@ -17,7 +17,7 @@ export default function AdminContactTab({
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t('admin.contact.title')}</h3>
+      <h3 className="text-xl font-bold text-theme-main mb-4">{t('admin.contact.title')}</h3>
       <FormField
         id="contactEmail"
         label={t('admin.contact.email')}

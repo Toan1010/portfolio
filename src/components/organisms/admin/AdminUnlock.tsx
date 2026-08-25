@@ -24,16 +24,16 @@ export default function AdminUnlock({
 
   return (
     <div className="min-h-[calc(100vh-160px)] flex items-center justify-center px-6 py-16">
-      <div className="w-full max-w-md p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-slate-800 shadow-2xl backdrop-blur-xl text-center space-y-6">
-        <div className="w-16 h-16 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center mx-auto border border-indigo-500/20">
+      <div className="w-full max-w-md p-8 rounded-3xl bg-theme-card border border-theme shadow-lg text-center space-y-6">
+        <div className="w-16 h-16 rounded-2xl bg-theme-card-subtle text-theme-main flex items-center justify-center mx-auto border border-theme">
           <Lock className="w-8 h-8" />
         </div>
 
         <div className="space-y-2">
-          <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white">
+          <h1 className="text-2xl font-extrabold text-theme-main">
             {t('admin.portalTitle')}
           </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
+          <p className="text-sm text-theme-muted">
             {t('admin.pinInstruction')}
           </p>
         </div>
@@ -59,7 +59,7 @@ export default function AdminUnlock({
           <button
             type="submit"
             disabled={isVerifying}
-            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-500 hover:from-indigo-600 hover:to-violet-600 text-white font-bold transition-all shadow-lg shadow-indigo-500/25 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+            className="w-full py-3.5 rounded-xl bg-theme-accent font-bold transition-all shadow-sm flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
           >
             {isVerifying ? (
               <RefreshCw className="w-4 h-4 animate-spin" />

@@ -64,36 +64,32 @@ export default function Projects({ data }: ProjectsProps) {
     : projectsData.filter(p => p.category === activeTab)
 
   return (
-    <section id="projects" className="py-24 px-6 border-t border-theme bg-theme-card-subtle relative overflow-hidden">
-      {/* Background radial glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-zinc-400/5 rounded-full blur-[90px] pointer-events-none" />
-
+    <section id="projects" className="py-20 px-6 border-t border-theme bg-theme-card-subtle relative">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-extrabold bg-theme-card-subtle text-theme-main border border-theme">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-theme-card text-theme-main border border-theme">
             <FolderGit2 className="w-3.5 h-3.5" />
             <span>{t('header.projects')}</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-theme-main">
             {t('projects.title')}
           </h2>
-          <div className="h-1.5 w-16 bg-theme-accent mx-auto rounded-full" />
-          <p className="opacity-80 text-theme-main max-w-xl mx-auto leading-relaxed">
+          <div className="h-1 w-12 bg-theme-accent mx-auto rounded-full" />
+          <p className="text-sm sm:text-base text-theme-muted max-w-xl mx-auto leading-relaxed">
             {t('projects.subtitle')}
           </p>
         </div>
 
         {/* Category Tabs */}
-        <div className="flex justify-center gap-2 mb-16 flex-wrap">
+        <div className="flex justify-center gap-1.5 mb-12 flex-wrap">
           {['All', 'Frontend', 'Backend', 'Fullstack'].map(tab => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 cursor-pointer ${
+              className={`px-4 py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 activeTab === tab
-                  ? 'bg-theme-accent shadow-md scale-[1.02]'
-                  : 'bg-theme-card text-theme-main border border-theme hover:opacity-80'
+                  ? 'bg-theme-accent shadow-sm'
+                  : 'bg-theme-card text-theme-main border border-theme hover:bg-theme-card-subtle'
               }`}
             >
               {tab === 'All' 
@@ -104,7 +100,7 @@ export default function Projects({ data }: ProjectsProps) {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {filteredProjects.map((project) => (
             <div key={project.id} className="animate-fade-in-up">
               <ProjectCard project={project} />

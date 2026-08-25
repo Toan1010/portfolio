@@ -37,7 +37,7 @@ export default function FormField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-4 py-3 rounded-xl bg-theme-card border border-theme text-theme-main placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all resize-none font-medium"
+          className="w-full px-4 py-3 rounded-xl bg-theme-card-subtle border border-theme text-theme-main placeholder:text-theme-muted placeholder:opacity-60 focus:outline-none focus:border-theme-accent transition-colors resize-none text-sm font-medium"
         />
       ) : (
         <input
@@ -47,7 +47,7 @@ export default function FormField({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="w-full px-4 py-3 rounded-xl bg-theme-card border border-theme text-theme-main placeholder:opacity-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 transition-all font-medium"
+          className="w-full px-4 py-3 rounded-xl bg-theme-card-subtle border border-theme text-theme-main placeholder:text-theme-muted placeholder:opacity-60 focus:outline-none focus:border-theme-accent transition-colors text-sm font-medium"
         />
       )}
     </div>

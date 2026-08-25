@@ -16,10 +16,10 @@ export default function AdminSkillsTab({
 
   return (
     <div className="space-y-6">
-      <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{t('admin.skills.title')}</h3>
+      <h3 className="text-xl font-bold text-theme-main mb-4">{t('admin.skills.title')}</h3>
       {['frontend', 'backend', 'devops'].map((category) => (
         <div key={category} className="space-y-2">
-          <label className="text-sm font-semibold capitalize text-slate-700 dark:text-slate-300">
+          <label className="text-sm font-semibold capitalize text-theme-main">
             {category} {t('admin.skills.stackHelp')}
           </label>
           <input
@@ -29,7 +29,7 @@ export default function AdminSkillsTab({
               const array = e.target.value.split(',').map((s) => s.trim()).filter(Boolean)
               setData({ ...data, skills: { ...data.skills, [category]: array } })
             }}
-            className="w-full px-4 py-3 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white"
+            className="w-full px-4 py-3 rounded-xl bg-theme-card-subtle border border-theme text-theme-main focus:outline-none focus:border-theme-accent text-sm font-medium"
           />
         </div>
       ))}

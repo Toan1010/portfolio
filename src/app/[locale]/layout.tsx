@@ -42,11 +42,9 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider>
             <LanguageProvider>
-              {/* Background Decorative Glows */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-                <div className="absolute top-[-10%] left-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-zinc-500/5 rounded-full blur-[140px]" />
-                <div className="absolute bottom-[20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-zinc-400/5 rounded-full blur-[140px]" />
-                <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] max-w-[700px] bg-zinc-500/5 rounded-full blur-[160px]" />
+              {/* Clean Ambient Subtlety */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 opacity-40">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-[radial-gradient(ellipse_at_top,var(--theme-border),transparent_70%)]" />
               </div>
 
               <Header />

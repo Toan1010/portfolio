@@ -24,40 +24,41 @@ export default function Hero({ data }: HeroProps) {
   const statsClients = getBilingualText(data?.statsClients, language) || '10+'
 
   return (
-    <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center pt-10 pb-20 px-6">
+    <section id="home" className="relative min-h-[calc(100vh-80px)] flex items-center pt-8 pb-16 px-6">
       <div className="max-w-7xl mx-auto grid md:grid-cols-12 gap-12 items-center w-full">
         {/* Left Hero Text */}
         <div className="md:col-span-7 flex flex-col justify-center space-y-6 text-left">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-theme-card-subtle border border-theme text-theme-main w-fit text-sm font-bold tracking-wide">
-            <Sparkles className="w-4 h-4 animate-pulse text-amber-500" /> {ready}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-theme-card border border-theme text-theme-main w-fit text-xs font-semibold tracking-wide">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span>{ready}</span>
           </div>
 
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight text-theme-main">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.1] text-theme-main">
               {t('hero.greeting')} <br />
-              <span className="bg-gradient-to-r from-emerald-600 via-teal-600 to-amber-600 dark:from-emerald-400 dark:via-teal-300 dark:to-amber-300 bg-clip-text text-transparent">
+              <span className="opacity-90">
                 {name}
               </span>
             </h1>
-            <h2 className="text-xl sm:text-2xl font-bold opacity-85 text-theme-main">
+            <h2 className="text-xl sm:text-2xl font-semibold text-theme-muted">
               {role}
             </h2>
-            <p className="text-base sm:text-lg opacity-80 max-w-xl leading-relaxed text-theme-main">
+            <p className="text-base sm:text-lg text-theme-muted max-w-xl leading-relaxed">
               {description}
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-3 pt-2">
             <button 
               onClick={() => setIsCvModalOpen(true)}
-              className="px-6 py-3.5 rounded-xl bg-theme-accent font-bold hover:opacity-90 hover:scale-[1.02] transition-all duration-300 flex items-center gap-2 cursor-pointer shadow-md"
+              className="px-6 py-3 rounded-xl bg-theme-accent font-semibold hover:opacity-90 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm text-sm"
             >
-              <FileText className="w-5 h-5" />
-              {t('hero.viewProjects')} <ArrowUpRight className="w-5 h-5" />
+              <FileText className="w-4 h-4" />
+              {t('hero.viewProjects')} <ArrowUpRight className="w-4 h-4" />
             </button>
             <a 
               href="#contact" 
-              className="px-6 py-3.5 rounded-xl bg-theme-card border border-theme text-theme-main font-bold hover:opacity-90 transition-all duration-300 flex items-center gap-2"
+              className="px-6 py-3 rounded-xl bg-theme-card border border-theme text-theme-main font-semibold hover:bg-theme-card-subtle transition-all duration-200 flex items-center gap-2 text-sm"
             >
               {t('hero.contactNow')}
             </a>
@@ -73,38 +74,40 @@ export default function Hero({ data }: HeroProps) {
 
         {/* Right Hero Image/Animation */}
         <div className="md:col-span-5 flex justify-center relative">
-          <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-theme-accent p-1.5 shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-            <div className="w-full h-full bg-theme-card rounded-[22px] overflow-hidden flex flex-col p-6 relative">
-              {/* Tech background graphic */}
-              <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:24px_24px]" />
-              
+          <div className="relative w-full max-w-md rounded-2xl bg-theme-card border border-theme p-5 shadow-lg">
+            <div className="w-full bg-theme-main rounded-xl overflow-hidden flex flex-col p-5 relative border border-theme">
               {/* Simulated IDE header */}
-              <div className="flex items-center gap-1.5 pb-4 border-b border-theme">
-                <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                <div className="w-3 h-3 rounded-full bg-amber-500/80" />
-                <div className="w-3 h-3 rounded-full bg-emerald-500/80" />
-                <span className="text-xs opacity-70 ml-2 font-mono text-theme-main">portfolio-ssr.tsx</span>
+              <div className="flex items-center justify-between pb-3.5 border-b border-theme">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-theme-muted opacity-40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-theme-muted opacity-40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-theme-muted opacity-40" />
+                </div>
+                <span className="text-xs text-theme-muted font-mono">portfolio-ssr.tsx</span>
               </div>
 
               {/* Simulated IDE code lines */}
-              <div className="flex-1 font-mono text-xs text-left pt-4 space-y-2 overflow-hidden text-theme-main">
-                <p className="opacity-90">import <span className="font-bold">{"{"} NextPage {"}"}</span> from <span className="opacity-75">'next'</span></p>
-                <p className="font-bold">const <span>Developer</span> = () =&gt; {"{"}</p>
+              <div className="flex-1 font-mono text-xs text-left pt-4 space-y-2 overflow-hidden text-theme-main leading-relaxed">
+                <p className="text-theme-muted">import <span className="text-theme-main font-semibold">{"{"} NextPage {"}"}</span> from <span className="text-theme-muted">'next'</span></p>
+                <p className="font-semibold text-theme-main">const Developer = () =&gt; {"{"}</p>
                 <div className="pl-4 space-y-1.5 border-l border-theme">
-                  <p className="opacity-80">name: <span className="font-semibold">'Nguyen Duc Toan'</span>,</p>
-                  <p className="opacity-80">role: <span className="font-semibold">'Frontend / Backend / Fullstack'</span>,</p>
-                  <p className="opacity-80">stack: [</p>
-                  <p className="opacity-90 pl-4">'Next.js', 'React', 'SSR',</p>
-                  <p className="opacity-90 pl-4">'Node.js', 'TypeScript'</p>
-                  <p className="opacity-80">],</p>
-                  <p className="opacity-80">passionateAbout: <span className="font-semibold">'Clean Code & Performance'</span></p>
+                  <p className="text-theme-muted">name: <span className="text-theme-main font-medium">'Nguyen Duc Toan'</span>,</p>
+                  <p className="text-theme-muted">role: <span className="text-theme-main font-medium">'Frontend / Backend / Fullstack'</span>,</p>
+                  <p className="text-theme-muted">stack: [</p>
+                  <p className="text-theme-main pl-4 font-medium">'Next.js', 'React', 'SSR',</p>
+                  <p className="text-theme-main pl-4 font-medium">'Node.js', 'TypeScript'</p>
+                  <p className="text-theme-muted">],</p>
+                  <p className="text-theme-muted">passionateAbout: <span className="text-theme-main font-medium">'Clean Code & Performance'</span></p>
                 </div>
-                <p className="font-bold">{"}"}</p>
+                <p className="font-semibold text-theme-main">{"}"}</p>
               </div>
 
               {/* Accent overlay label */}
-              <div className="absolute bottom-4 right-4 bg-theme-accent px-3 py-1 rounded-lg text-xs font-semibold flex items-center gap-1 shadow-sm">
-                <Terminal className="w-3.5 h-3.5" /> {t('hero.webDev')}
+              <div className="mt-4 pt-3 border-t border-theme flex items-center justify-between text-xs text-theme-muted">
+                <span className="flex items-center gap-1.5">
+                  <Terminal className="w-3.5 h-3.5" /> {t('hero.webDev')}
+                </span>
+                <span className="font-mono text-[10px] uppercase opacity-70">SSR Ready</span>
               </div>
             </div>
           </div>

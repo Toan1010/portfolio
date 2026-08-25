@@ -3,72 +3,56 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ==========================================================================
-   CENTRALIZED THEME COLOR SYSTEM
-   Chỉnh sửa toàn bộ màu sắc giao diện (Light & Dark theme) duy nhất tại đây.
+   CENTRALIZED UNIFIED THEME SYSTEM (Monochrome & Minimalist Slate)
    ========================================================================== */
 :root {
-  /* ==========================================================================
-     3 MÀU CHÍNH DỰ ÁN (Đen, Trắng & Xám Zinc)
-     ========================================================================== */
-  --color-primary: #ffffff;
-  /* Màu Primary (Nền Light / Chữ Dark) */
-  --color-secondary: #09090b;
-  /* Màu Secondary (Chữ Light / Nền Dark) */
-  --color-third: #27272a;
-  /* Màu Third / Accent (Xám Zinc đậm) */
+  /* LIGHT THEME (Pure White bg, Slate text, Clean Light Cards) */
+  --theme-bg-main: #ffffff;
+  --theme-text-main: #0f172a;
+  --theme-text-muted: #64748b;
 
-  /* ==========================================================================
-     LIGHT THEME (bg: trắng, text: đen)
-     ========================================================================== */
-  --theme-bg-main: var(--color-primary);
-  --theme-text-main: var(--color-secondary);
+  --theme-accent-bg: #0f172a;
+  --theme-accent-text: #ffffff;
 
-  --theme-accent-bg: var(--color-secondary);
-  --theme-accent-text: var(--color-primary);
+  --theme-third-bg: #f1f5f9;
+  --theme-third-text: #0f172a;
 
-  --theme-third-bg: var(--color-third);
-  --theme-third-text: #ffffff;
-
-  --theme-bg-card: #f4f4f5; /* Zinc 100 */
-  --theme-bg-card-subtle: color-mix(in srgb, var(--color-secondary) 5%, transparent);
-  --theme-border: color-mix(in srgb, var(--color-secondary) 12%, transparent);
-  --theme-header-bg: color-mix(in srgb, var(--color-primary) 80%, transparent);
+  --theme-bg-card: #f8fafc;
+  --theme-bg-card-subtle: #f1f5f9;
+  --theme-border: #e2e8f0;
+  --theme-header-bg: rgba(255, 255, 255, 0.85);
 }
 
 .dark {
-  /* ==========================================================================
-     DARK THEME (bg: đen, text: trắng)
-     ========================================================================== */
-  --color-third: #d4d4d8; /* Zinc 300 cho dark mode */
+  /* DARK THEME (Obsidian bg, Off-White text, Sleek Dark Cards) */
+  --theme-bg-main: #09090b;
+  --theme-text-main: #f4f4f5;
+  --theme-text-muted: #a1a1aa;
 
-  --theme-bg-main: var(--color-secondary);
-  --theme-text-main: var(--color-primary);
+  --theme-accent-bg: #f4f4f5;
+  --theme-accent-text: #09090b;
 
-  --theme-accent-bg: var(--color-primary);
-  --theme-accent-text: var(--color-secondary);
+  --theme-third-bg: #18181b;
+  --theme-third-text: #f4f4f5;
 
-  --theme-third-bg: #27272a; /* Zinc 800 */
-  --theme-third-text: #ffffff;
-
-  --theme-bg-card: #18181b; /* Zinc 900 */
-  --theme-bg-card-subtle: color-mix(in srgb, var(--color-primary) 6%, transparent);
-  --theme-border: color-mix(in srgb, var(--color-primary) 12%, transparent);
-  --theme-header-bg: color-mix(in srgb, var(--color-secondary) 80%, transparent);
+  --theme-bg-card: #121215;
+  --theme-bg-card-subtle: #18181b;
+  --theme-border: #27272a;
+  --theme-header-bg: rgba(9, 9, 11, 0.85);
 }
 
 @theme {
   --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --animate-fade-in-up: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in-up: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
 
   @keyframes fade-in-up {
     from {
       opacity: 0;
-      transform: translateY(24px) scale(0.98);
+      transform: translateY(16px);
     }
-
     to {
       opacity: 1;
-      transform: translateY(0) scale(1);
+      transform: translateY(0);
     }
   }
 }
@@ -94,6 +78,10 @@ body {
   color: var(--theme-text-main);
 }
 
+.text-theme-muted {
+  color: var(--theme-text-muted);
+}
+
 .bg-theme-card {
   background-color: var(--theme-bg-card);
 }
@@ -107,8 +95,8 @@ body {
 }
 
 .bg-theme-accent {
-  background-color: var(--theme-accent-bg);
-  color: var(--theme-accent-text);
+  background-color: var(--theme-accent-bg) !important;
+  color: var(--theme-accent-text) !important;
 }
 
 .text-theme-accent {
@@ -121,11 +109,11 @@ body {
 }
 
 .text-theme-third {
-  color: var(--color-third);
+  color: var(--theme-third-text);
 }
 
 .border-theme-third {
-  border-color: var(--color-third);
+  border-color: var(--theme-border);
 }
 
 .bg-theme-header {
