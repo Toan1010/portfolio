@@ -1,0 +1,179 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "hireMe": "Hire Me"
+  },
+  "hero": {
+    "ready": "Ready for new projects",
+    "greeting": "Hello, I'm",
+    "name": "Nguyen Duc Toan",
+    "role": "Front End Developer",
+    "description": "Front End Developer with hands-on experience in TypeScript, React, and Next.js, specializing in server-side rendering (SSR), SEO optimization, and modern caching strategies to build high-performance web applications.",
+    "viewProjects": "Download CV",
+    "contactNow": "Contact Now",
+    "statsYears": "Years of experience",
+    "statsProjects": "Completed projects",
+    "statsClients": "Happy clients",
+    "webDev": "Web Developer"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate about creating efficient, high-performance, and user-centric technology solutions.",
+    "narrativeTitle": "Journey & Career Goals",
+    "narrativeP1": "I graduated with a major in Information Technology from Thang Long University. With hands-on experience working at APUS Digital Solutions JSC and VNPT Cybersecurity Center, I focus on building high-quality, maintainable, and scalable web applications.",
+    "narrativeP2": "My objective is to write clean, scalable software, applying modern rendering paradigms (SSR/SSG/ISR) and efficient caching layers (React Query/Redis) to deliver maximum value to end-users and organizations.",
+    "valueQualityTitle": "Quality First",
+    "valueQualityDesc": "Writing clear, structured, and easy-to-maintain source code.",
+    "valuePerformanceTitle": "Performance & SSR",
+    "valuePerformanceDesc": "Ensuring lightning-fast page loads and robust SEO through server-side rendering.",
+    "highlightFrontendTitle": "Front-End",
+    "highlightFrontendDesc": "Proficient in React, Next.js, TypeScript, TailwindCSS, and UI libraries like MUI.",
+    "highlightBackendTitle": "Back-End (Basic)",
+    "highlightBackendDesc": "Experience developing APIs and business logic with Node.js (Express) and Java (Spring Boot).",
+    "highlightDatabaseTitle": "Database & Caching",
+    "highlightDatabaseDesc": "Optimizing MySQL, PostgreSQL databases, and API performance using Redis caching.",
+    "highlightSystemTitle": "System & DevOps",
+    "highlightSystemDesc": "Managing source code with Git/GitHub and basic application dockerization."
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "The technology stack I regularly use to bring ideas to life."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Key projects I have developed and contributed to recently.",
+    "all": "All",
+    "demo": "Live Demo",
+    "source": "Source Code",
+    "categories": {
+      "all": "All",
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "fullstack": "Fullstack"
+    },
+    "items": {
+      "project_1_title": "Enterprise ERP System",
+      "project_1_desc": "Developed HRM, order, and product management modules using Next.js, TypeScript, MUI, and React Hook Form. Integrated RESTful APIs and TanStack Query for real-time synchronization.",
+      "project_2_title": "E-Commerce Platform",
+      "project_2_desc": "An online shopping platform with a real-time shopping cart, Stripe integration, and a comprehensive admin control dashboard.",
+      "project_3_title": "Recruitment & Blog API System",
+      "project_3_desc": "Built backend API services for managing recruitment postings and blogs using ExpressJS. Integrated Redis caching layer for API performance optimization.",
+      "project_4_title": "Kanban Task Management App",
+      "project_4_desc": "An intuitive Kanban workspace with drag-and-drop task items and visualization graphs tracking team productivity."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Have a project idea or a partnership opportunity? Send a message now!",
+    "infoTitle": "Contact Information",
+    "infoDesc": "Feel free to reach out via email, phone, or social channels. I will respond as quickly as possible.",
+    "formName": "Your Name",
+    "formEmail": "Email Address",
+    "formMessage": "Message",
+    "placeholderName": "Nguyen Duc Toan",
+    "placeholderEmail": "nguyenductoan538@gmail.com",
+    "placeholderMessage": "Hello, I would like to discuss a project...",
+    "submit": "Send Message",
+    "successTitle": "Sent successfully!",
+    "successDesc": "Thank you for reaching out. I have received your message and will reply as soon as possible."
+  },
+  "admin": {
+    "portalTitle": "Admin Portal",
+    "pinInstruction": "Enter security PIN to edit Portfolio content ",
+    "pinLabel": "Security PIN",
+    "pinPlaceholder": "Enter PIN ",
+    "unlockBtn": "Unlock Admin",
+    "invalidPin": "Incorrect PIN!",
+    "loadingData": "Loading Portfolio content...",
+    "editorTitle": "Content Editor Admin",
+    "editorDesc": "Edit all information in your Portfolio. Changes will apply to the home page immediately after saving.",
+    "saveBtn": "Save Changes",
+    "lockBtn": "Lock",
+    "exportBtn": "Export JSON",
+    "importBtn": "Import JSON",
+    "importSuccess": "JSON file imported successfully! Review and click 'Save Changes' to save.",
+    "importInvalid": "Invalid JSON file structure.",
+    "importError": "Failed to read JSON file.",
+    "saveSuccess": "Portfolio content updated successfully! Home page has been refreshed.",
+    "saveError": "Failed to update content.",
+    "editLangLabel": "Content Editing Language:",
+    "editLangDesc": "Select language to edit bilingual content (Vietnamese / English) for Portfolio",
+    "langVi": "🇻🇳 Vietnamese (VI)",
+    "langEn": "🇬🇧 English (EN)",
+    "cv": {
+      "title": "CV File Management (3 Roles)",
+      "selectRole": "Select Role CV:",
+      "roleFrontend": "Front-End",
+      "roleBackend": "Back-End",
+      "roleFullstack": "Fullstack",
+      "currentCv": "Current CV File:",
+      "viewCv": "View / Download CV",
+      "selectFile": "Select new CV file (PDF or Word):",
+      "uploadBtn": "Update CV",
+      "uploading": "Uploading CV...",
+      "success": "CV file updated successfully!",
+      "invalidType": "Only PDF (.pdf) and Word (.doc, .docx) files are accepted.",
+      "noFile": "Please select a CV file (PDF or Word) to upload."
+    },
+    "cvModal": {
+      "title": "Download CV by Role",
+      "subtitle": "Choose the CV version tailored for your job role:",
+      "frontendCv": "Front-End Developer CV",
+      "backendCv": "Back-End Developer CV",
+      "fullstackCv": "Fullstack Developer CV",
+      "download": "Download"
+    },
+    "tabs": {
+      "hero": "Hero Section",
+      "about": "About Me",
+      "skills": "Skills",
+      "projects": "Projects",
+      "contact": "Contact Info"
+    },
+    "hero": {
+      "title": "Edit Hero Section",
+      "greeting": "Greeting",
+      "name": "Full Name",
+      "role": "Job Title / Role",
+      "ready": "Badge Status (e.g. Ready for new projects)",
+      "description": "Short Bio (Hero Description)",
+      "statsYears": "Years of Experience",
+      "statsProjects": "Completed Projects",
+      "statsClients": "Happy Clients"
+    },
+    "about": {
+      "title": "Edit About Me Section",
+      "aboutTitle": "About Section Title",
+      "aboutSubtitle": "Subtitle",
+      "narrativeTitle": "Journey Title",
+      "narrativeP1": "Paragraph 1",
+      "narrativeP2": "Paragraph 2"
+    },
+    "skills": {
+      "title": "Edit Skills",
+      "stackHelp": "Stack (Comma separated)"
+    },
+    "projects": {
+      "title": "Projects List",
+      "addBtn": "Add New Project",
+      "projNum": "Project #",
+      "deleteHelp": "Delete this project",
+      "projName": "Project Name",
+      "category": "Category",
+      "projDesc": "Project Description",
+      "tags": "Tags (Comma separated)",
+      "demoUrl": "Demo Link",
+      "githubUrl": "GitHub Link"
+    },
+    "contact": {
+      "title": "Edit Contact Information",
+      "email": "Email Address",
+      "github": "GitHub Link",
+      "linkedin": "LinkedIn Link"
+    }
+  }
+}

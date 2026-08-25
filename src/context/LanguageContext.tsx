@@ -1,8 +1,8 @@
 'use client'
 
-import React, { createContext, useContext, useState, useEffect } from 'react'
-import { en } from '@/locales/en'
-import { vi } from '@/locales/vi'
+import React, { createContext, useContext } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+import { useRouter, usePathname } from '@/i18n/routing'
 
 type Language = 'vi' | 'en'
 
@@ -13,50 +13,36 @@ interface LanguageContextType {
   t: (keyPath: string, fallback?: string) => string
 }
 
-const dictionaries = { en, vi }
-
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('vi')
-
-  useEffect(() => {
-    const saved = localStorage.getItem('portfolio_lang') as Language
-    if (saved && (saved === 'en' || saved === 'vi')) {
-      setLanguageState(saved)
-    }
-  }, [])
+  const locale = useLocale() as Language
+  const router = useRouter()
+  const pathname = usePathname()
+  const tNextIntl = useTranslations()
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang)
-    localStorage.setItem('portfolio_lang', lang)
+    router.replace(pathname, { locale: lang })
   }
 
   const toggleLanguage = () => {
-    setLanguageState((prevLang) => {
-      const nextLang = prevLang === 'vi' ? 'en' : 'vi'
-      localStorage.setItem('portfolio_lang', nextLang)
-      return nextLang
-    })
+    const nextLang = locale === 'vi' ? 'en' : 'vi'
+    router.replace(pathname, { locale: nextLang })
   }
 
   const t = (keyPath: string, fallback?: string): string => {
-    const keys = keyPath.split('.')
-    let current: any = dictionaries[language]
-
-    for (const key of keys) {
-      if (current && typeof current === 'object' && key in current) {
-        current = current[key]
-      } else {
-        return fallback || keyPath
+    try {
+      if (tNextIntl.has(keyPath)) {
+        return tNextIntl(keyPath)
       }
+      return fallback || keyPath
+    } catch {
+      return fallback || keyPath
     }
-
-    return typeof current === 'string' ? current : fallback || keyPath
   }
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, toggleLanguage, t }}>
+    <LanguageContext.Provider value={{ language: locale, setLanguage, toggleLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   )
