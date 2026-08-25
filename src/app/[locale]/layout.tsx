@@ -38,18 +38,20 @@ export default async function LocaleLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
       </head>
-      <body className="bg-theme-main text-theme-main min-h-screen relative font-sans selection:bg-theme-card-subtle antialiased overflow-x-hidden transition-colors duration-300">
+      <body className="bg-theme-main text-theme-main min-h-screen relative font-sans selection:bg-theme-card-subtle antialiased overflow-x-hidden transition-colors duration-300 flex flex-col">
         <NextIntlClientProvider messages={messages} locale={locale}>
           <ThemeProvider>
             <LanguageProvider>
               {/* Background Decorative Glows */}
-              <div className="absolute top-[-10%] left-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
-              <div className="absolute bottom-[20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-teal-500/10 rounded-full blur-[140px] pointer-events-none" />
-              <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] max-w-[700px] bg-amber-500/10 rounded-full blur-[160px] pointer-events-none" />
+              <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+                <div className="absolute top-[-10%] left-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-zinc-500/5 rounded-full blur-[140px]" />
+                <div className="absolute bottom-[20%] right-[-15%] w-[60vw] h-[60vw] max-w-[800px] bg-zinc-400/5 rounded-full blur-[140px]" />
+                <div className="absolute top-[40%] left-[50%] -translate-x-1/2 w-[50vw] h-[50vw] max-w-[700px] bg-zinc-500/5 rounded-full blur-[160px]" />
+              </div>
 
               <Header />
 
-              <main className="relative z-10">
+              <main className="flex-grow flex flex-col relative z-10">
                 {children}
               </main>
 

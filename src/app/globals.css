@@ -8,17 +8,17 @@
    ========================================================================== */
 :root {
   /* ==========================================================================
-     3 MÀU CHÍNH DỰ ÁN (Sửa 3 màu tại đây)
+     3 MÀU CHÍNH DỰ ÁN (Đen, Trắng & Xám Zinc)
      ========================================================================== */
-  --color-primary: #fce79b;
-  /* Màu Primary (Màu Nền Light / Màu Chữ Dark) */
-  --color-secondary: #00221e;
-  /* Màu Secondary (Màu Chữ Light / Màu Nền Dark) */
-  --color-third: #c53913;
-  /* Màu Third / Accent / Highlighting */
+  --color-primary: #ffffff;
+  /* Màu Primary (Nền Light / Chữ Dark) */
+  --color-secondary: #09090b;
+  /* Màu Secondary (Chữ Light / Nền Dark) */
+  --color-third: #27272a;
+  /* Màu Third / Accent (Xám Zinc đậm) */
 
   /* ==========================================================================
-     LIGHT THEME (bg: primary, text: secondary)
+     LIGHT THEME (bg: trắng, text: đen)
      ========================================================================== */
   --theme-bg-main: var(--color-primary);
   --theme-text-main: var(--color-secondary);
@@ -29,29 +29,31 @@
   --theme-third-bg: var(--color-third);
   --theme-third-text: #ffffff;
 
-  --theme-bg-card: color-mix(in srgb, #ffffff 75%, var(--color-primary));
-  --theme-bg-card-subtle: color-mix(in srgb, var(--color-secondary) 7%, transparent);
-  --theme-border: color-mix(in srgb, var(--color-secondary) 18%, transparent);
-  --theme-header-bg: color-mix(in srgb, var(--color-primary) 85%, transparent);
+  --theme-bg-card: #f4f4f5; /* Zinc 100 */
+  --theme-bg-card-subtle: color-mix(in srgb, var(--color-secondary) 5%, transparent);
+  --theme-border: color-mix(in srgb, var(--color-secondary) 12%, transparent);
+  --theme-header-bg: color-mix(in srgb, var(--color-primary) 80%, transparent);
 }
 
 .dark {
   /* ==========================================================================
-     DARK THEME (Ngược lại: bg: secondary, text: primary)
+     DARK THEME (bg: đen, text: trắng)
      ========================================================================== */
+  --color-third: #d4d4d8; /* Zinc 300 cho dark mode */
+
   --theme-bg-main: var(--color-secondary);
   --theme-text-main: var(--color-primary);
 
   --theme-accent-bg: var(--color-primary);
   --theme-accent-text: var(--color-secondary);
 
-  --theme-third-bg: var(--color-third);
+  --theme-third-bg: #27272a; /* Zinc 800 */
   --theme-third-text: #ffffff;
 
-  --theme-bg-card: color-mix(in srgb, var(--color-primary) 12%, var(--color-secondary));
-  --theme-bg-card-subtle: color-mix(in srgb, var(--color-primary) 10%, transparent);
-  --theme-border: color-mix(in srgb, var(--color-primary) 22%, transparent);
-  --theme-header-bg: color-mix(in srgb, var(--color-secondary) 85%, transparent);
+  --theme-bg-card: #18181b; /* Zinc 900 */
+  --theme-bg-card-subtle: color-mix(in srgb, var(--color-primary) 6%, transparent);
+  --theme-border: color-mix(in srgb, var(--color-primary) 12%, transparent);
+  --theme-header-bg: color-mix(in srgb, var(--color-secondary) 80%, transparent);
 }
 
 @theme {

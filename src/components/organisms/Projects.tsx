@@ -66,8 +66,8 @@ export default function Projects({ data }: ProjectsProps) {
   return (
     <section id="projects" className="py-24 px-6 border-t border-theme bg-theme-card-subtle relative overflow-hidden">
       {/* Background radial glows */}
-      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-amber-500/10 rounded-full blur-[90px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-zinc-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 right-1/4 -translate-y-1/2 w-[350px] h-[350px] bg-zinc-400/5 rounded-full blur-[90px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
